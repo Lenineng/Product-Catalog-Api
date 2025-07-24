@@ -40,7 +40,7 @@ npm run dev
 npm start
 ```
 
-The API will be running at:
+The API (swagger) will be running at:
 ``` bash
 http://localhost:5000/api-docs
 ```
