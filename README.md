@@ -71,28 +71,19 @@ Each product supports the following structure:
   description: String,
   
   price: Number (required if no variants),
-  
+
+  Discount: Number,
+   
   category: String,
-  
-  inStock: Boolean,
   
   quantity: Number,
   
   variants: [
   
     {
-      name: String,
-      
-      price: Number,
-      
-      stock: Number,
-      
-      attributes: {
-      
-        size: String,
       
         color: String
-      
+        stock: number
       }
     }
   ]
@@ -111,31 +102,21 @@ Each product supports the following structure:
 POST /api/products
 
 {
-  "name": "T-Shirt",
-  
-  "description": "Comfortable cotton t-shirt",
-  
-  "category": "Apparel",
-  
-  "price": 15,
-  
-  "variants": [
-    
-    {
-      "name": "Red - Medium",
-      
-      "price": 16,
-      
-      "stock": 50,
-      
-      "attributes": {
-      
-        "size": "M",
-      
-        "color": "Red"
-      }
-    }
-  ]
+"name": "TOYOTA",
+	"description": "good quality and comfy car.",
+	"price": 90000,
+	"discount": 10,
+	"category": "6881dbad126b5ffdf56bc04b",
+	"variants": [
+	{
+	   "color": "white",
+	   "stock": 5
+},
+{
+	"color": "black",
+	   "stock": 10
+}
+	]
 }
 
 ### Error Handling
@@ -179,6 +160,10 @@ project-root/
 └── .env
 
 
+
+
+#### DEMO VIDEO: 
+https://www.loom.com/share/c8f4f2d7aa0e4729a648b97c41fab707?sid=729eea68-2a45-4f5a-908c-f3e8ded86bcc
 
 #### License
 This project is open-source and free to use under the MIT License.
