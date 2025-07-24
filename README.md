@@ -28,9 +28,9 @@ Create a .env file in the root directory and add the following:
 ``` bash
 PORT=5000
 MONGO_URI=mongodb://localhost:27017/product_catalog
+```
 
 ### Running the Server
-
 ``` bash
 npm run dev
 ```
@@ -41,11 +41,13 @@ npm start
 ```
 
 The API will be running at:
+``` bash
 http://localhost:5000/api-docs
+```
 
 ### Product Schema
 Each product supports the following structure:
-
+``` bash
 {
   name: String (required),
 
@@ -69,17 +71,35 @@ Each product supports the following structure:
     }
   ]
 }
+```
 
-### API Endpoints
-- Method	Endpoint	Description
-- GET	/api/products	Get all products
-- GET	/api/products/:id	Get a single product
-- POST	/api/products	Create new product
-- PUT	/api/products/:id	Update a product
-- DELETE	/api/products/:id	Delete a product
+## API Endpoints
+
+### Category Endpoints
+
+| Method | Endpoint           | Description               |
+|--------|--------------------|---------------------------|
+| GET    | /categories      | Get all categories        |
+| GET    | /categories/:id  | Get category by ID/slug   |
+| POST   | /categories      | Create category           |
+| PUT    | /categories/:id  | Update category           |
+| DELETE | /categories/:id  | Delete category           |
+
+### Product Endpoints
+
+| Method | Endpoint                                              | Description                     |
+|--------|-------------------------------------------------------|---------------------------------|
+| GET    | /products                                           | Get all products                |
+| GET    | /products/:id                                       | Get product by ID               |
+| POST   | /products                                           | Create a product                |
+| PUT    | /products/:id                                       | Update a product                |
+| DELETE | /products/:id                                       | Delete a product                |
+| GET    | /products?search=tv                                 | Search products by name/desc    |
+| GET    | /products?category=ID                               | Filter by category              |
+| GET    | /products?minPrice=10&maxPrice=100                  | Filter by price range           |
 
 #### Example Create Request:
-
+``` bash
 POST /api/products
 
 {
@@ -99,52 +119,53 @@ POST /api/products
 }
 	]
 }
+```
 
 ### Error Handling
 All errors are returned in the following format:
-
+``` bash
 {
   "message": "Product not found"
 }
+```
 The API handles:
-
+``` bash
 - 404 Not Found
 
 - 500 Internal Server Error
 
 - Validation errors
-
+```
 ### Project Structure
-
-project-root/
-
+``` bash
+product-catalog-api/
+│
+├── config/
+│   └── db.js           # MongoDB connection
 ├── controllers/
-
 │   └── productController.js
-
-├── routes/
-
-│   └── productRoutes.js
-
+│   └── categoryController.js
 ├── models/
-
-│   └── product.js
-
+│   └── Product.js
+│   └── Category.js
+├── routes/
+│   └── productRoutes.js
+│   └── categoryRoutes.js
 ├── middlewares/
-
 │   └── errorMiddleware.js
-
-├── app.js
-
-├── server.js
-
-└── .env
-
-
+├── swagger/
+│   └── swaggerDocs.js
+├── .env
+├── index.js
+├── swagger.js
+└── README.md
+```
 
 
 #### DEMO VIDEO: 
+``` bash
 https://www.loom.com/share/c8f4f2d7aa0e4729a648b97c41fab707?sid=729eea68-2a45-4f5a-908c-f3e8ded86bcc
+```
 
 #### License
 This project is open-source and free to use under the MIT License.
