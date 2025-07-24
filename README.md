@@ -22,9 +22,10 @@ npm install
 ```
 
 ### Environment Variables
-``` bash
+
 Create a .env file in the root directory and add the following:
-```
+
+``` bash
 PORT=5000
 MONGO_URI=mongodb://localhost:27017/product_catalog
 
