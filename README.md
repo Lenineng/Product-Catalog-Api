@@ -1,36 +1,19 @@
 # Product-Catalog-Api
 A RESTful API built with Node.js, Express, and MongoDB that allows you to manage products, their variants, pricing, and inventory. Ideal for e-commerce or inventory systems.
 
-## Table of Contents
-Features
+## Features
+- Create, update, delete, and fetch products with ease
 
-- Installation
+- Handle product variants such as size and color
 
-- Environment Variables
+- Track inventory for both main products and their variants
 
-- Running the Server
+- Return meaningful error messages and use appropriate HTTP status codes
 
-- API Endpoints
+- Includes middleware for logging, JSON body parsing, and Cross-Origin Resource Sharing (CORS)
 
-- Product Schema
-
-- Error Handling
-
-- License
-
-### Features
-- Add, update, delete, and retrieve products
-
-- Support for product variants (e.g., size, color)
-
-- Inventory management for both base product and variants
-
-- Proper HTTP status codes and error messages
-
-- Middleware for logging, JSON parsing, and CORS
-
-- Structured code with clear routing and controllers
-
+- Clean and modular codebase with well-organized routes and controllers
+  
 ### Installation
 ```bash
 git clone https://github.com/yourusername/product-catalog-api.git
@@ -42,11 +25,8 @@ npm install
 ``` bash
 Create a .env file in the root directory and add the following:
 ```
-PORT=3000
-
-MONGO_URI=mongodb://localhost:27017/product-catalog
-
-NODE_ENV=development
+PORT=5000
+MONGO_URI=mongodb://localhost:27017/product_catalog
 
 ### Running the Server
 
